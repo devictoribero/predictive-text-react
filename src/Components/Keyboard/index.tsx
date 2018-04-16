@@ -1,9 +1,14 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
+import KeyboardCell from "../KeyboardCell";
 
 const PhoneKeyboard = glamorous.div({
-  'width': '200px',
-  'background': 'red',
+  'width': '100%',
+  'display': 'flex',
+  'justify-content': 'center',
+  'align-items': 'center',
+  'flex-wrap': 'wrap',
+  'borderTop': '1px solid #efefef',
 });
 
 const Keyboard = (props:any) => {
@@ -30,18 +35,11 @@ const Keyboard = (props:any) => {
           />
         );
       })}
+
+      <KeyboardCell number_cell={''} characters={['*']} />
+      <KeyboardCell number_cell={'#'} characters={[0]} />
+      <KeyboardCell number_cell={''} characters={['$']} />
     </PhoneKeyboard>
   );
 };
 export default Keyboard;
-
-const KeyboardCell = (props: any) => {
-  return(
-    <div className="phone__keyboard-cell">
-      <span className="phone__keyboard-number">{props.number_cell}</span>
-      <span className="phone__keyboard-chars-per-number">
-        {props.characters.map((char: string) => char)}
-      </span>
-    </div>
-  );
-};

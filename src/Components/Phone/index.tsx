@@ -1,24 +1,29 @@
 import * as React from 'react';
 import Keyboard from "../Keyboard";
 import glamorous from "glamorous";
+import Screen from "../Screen";
+import TextDisplayer from "../TextDisplayer";
 
 
 const PhoneStyles = glamorous.main({
-  'border': '2px solid #e0e1e2',
   'border-radius': '6px',
-  'background': 'white',
-  'padding-top': '20px',
-  'padding-bottom': '30px',
+  'background': 'black',
+  'padding-top': '40px',
+  'padding-bottom': '60px',
   'box-shadow': '0 0 1em 0.25em rgba(0,0,0,0.2)',
+  'width': '275px',
 });
 
 const Phone = (props:any) => {
   return (
     <PhoneStyles>
+      <Screen>
 
-      {props.children}
-      <Keyboard />
+        <TextDisplayer/>
 
+        <Keyboard />
+
+      </Screen>
     </PhoneStyles>
   );
 };
