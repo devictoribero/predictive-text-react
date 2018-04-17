@@ -2,8 +2,7 @@ import * as React from 'react';
 import glamorous from "glamorous";
 
 import Keyboard from "./Keyboard";
-import Screen from "./Screen";
-import Chat from "./Chat";
+import Chat from "./ChatWindow";
 
 interface PhoneState {
   isKeyboardShown: boolean,
@@ -11,7 +10,7 @@ interface PhoneState {
   conversation: object,
 }
 
-class Phone extends React.Component<{}, PhoneState> {
+class PhoneComponent extends React.Component<{}, PhoneState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -40,8 +39,8 @@ class Phone extends React.Component<{}, PhoneState> {
 
   render() {
     return (
-      <PhoneStyles>
-        <Screen>
+      <Phone>
+        <PhoneInner>
 
           <Chat
             message={this.state.message}
@@ -50,16 +49,16 @@ class Phone extends React.Component<{}, PhoneState> {
           />
           {this.state.isKeyboardShown && <Keyboard/>}
 
-        </Screen>
-      </PhoneStyles>
+        </PhoneInner>
+      </Phone>
     );
   }
 }
 
-export default Phone;
+export default PhoneComponent;
 
 
-const PhoneStyles = glamorous.main({
+const Phone = glamorous.main({
   borderRadius: '6px',
   background: 'black',
   paddingTop: '40px',
@@ -68,4 +67,10 @@ const PhoneStyles = glamorous.main({
   width: '300px',
   height: '450px',
   overflow: 'hidden',
+});
+
+const PhoneInner = glamorous.div({
+  border: '5px solid black',
+  background: 'white',
+  height: '100%',
 });
