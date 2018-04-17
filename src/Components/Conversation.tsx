@@ -6,9 +6,9 @@ import UserMessages from "./UserMessages";
 const Conversation = (props:any) => {
   return (
     <ConversationStyles>
-      { props.conversation.length > 0 &&
-        props.conversation.map((userMessages: any, i: number) => {
-          return <UserMessages key={i} userMessages={userMessages} />;
+      { props.conversation.messages.length > 0 &&
+        props.conversation.messages.map((groupOfMessages: any, i: number) => {
+          return <UserMessages key={i} groupOfMessages={groupOfMessages} />;
         })
       }
     </ConversationStyles>

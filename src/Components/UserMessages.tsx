@@ -4,16 +4,17 @@ import Message from "./Message";
 
 
 const UserMessages = (props:any) => {
+  console.log(props);
   return (
     <UserMessageStyles>
 
       <Avatar
-        src={props.userMessages.user.avatar}
-        alt={`Avatar of ${props.userMessages.user.name}`}
+        src={props.groupOfMessages.user.avatar}
+        alt={`Avatar of ${props.groupOfMessages.user.name}`}
       />
 
       <BlockMessagesStyles>
-        {props.userMessages.user.messages.map((msg: string, i: number) => {
+        {props.groupOfMessages.data.map((msg: string, i: number) => {
           return <Message key={i} text={msg} />
         })}
       </BlockMessagesStyles>

@@ -7,7 +7,8 @@ const ChatBox = (props: any) => {
       <Input
         type="text"
         placeholder={'Write something'}
-        onChange={value => props.onChatBoxChange(value)}
+        value={props.message}
+        onChange={(event: any) => props.onChatBoxChange(event.target.value)}
       />
     </ChatBoxStyles>
   );

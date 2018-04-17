@@ -4,24 +4,14 @@ import glamorous from "glamorous";
 import Conversation from "./Conversation";
 import ChatBox from "./ChatBox";
 
-const conversation: Array<object> = [
-  {
-    user: {
-      name: 'Victor Ribero',
-      avatar: 'https://avatars0.githubusercontent.com/u/16169890?s=400&v=4',
-      messages: [
-        'To start, start typing on the chatbox',
-        'Don\'t forget to check my website www.victorribero.com',
-      ],
-    },
-  }
-];
-
 const Chat = (props: any) => {
   return (
     <ChatWrapperStyles>
-      <Conversation conversation={conversation}/>
-      <ChatBox onChatBoxChange={(value: string) => props.onChatBoxChange(value)}/>
+      <Conversation conversation={props.conversation}/>
+      <ChatBox
+        message={props.message}
+        onChatBoxChange={(value: string) => props.onChatBoxChange(value)}
+      />
     </ChatWrapperStyles>
   );
 };
