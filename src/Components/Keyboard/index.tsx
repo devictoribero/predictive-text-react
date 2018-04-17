@@ -18,8 +18,8 @@ const Keyboard = (props:any) => {
   ];
 
   return (
-    <KeyboardWrapper>
-      <Recommendations recommendations={['as', 'fgdfg', 'dfgdfg']}/>
+    <div>
+      <Recommendations recommendations={['casa', 'cabra', 'casi', 'caso', 'casar']}/>
 
       <PhoneKeyboard>
         {KEYBOARD_CONFIGURATION.map((characters: any, i: number) => {
@@ -36,21 +36,17 @@ const Keyboard = (props:any) => {
         <KeyboardCell number_cell={'#'} characters={[0]} />
         <KeyboardCell number_cell={''} characters={['$']} />
       </PhoneKeyboard>
-    </KeyboardWrapper>
+    </div>
   );
 };
 export default Keyboard;
 
 
-const KeyboardWrapper = glamorous.div({
-  'borderTop': '1px solid #efefef',
-});
-
 const PhoneKeyboard = glamorous.div({
-  'width': '100%',
-  'display': 'flex',
-  'justifyContent': 'center',
-  'alignItems': 'center',
-  'flexWrap': 'wrap',
-  'borderTop': '1px solid #efefef',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  background: '#dce2ed',
 });

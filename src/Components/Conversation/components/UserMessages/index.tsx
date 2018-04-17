@@ -30,6 +30,8 @@ const UserMessageStyles = glamorous.div({
   overflowY: 'auto',
   height: '100%',
   boxSizing: 'border-box',
+  minHeight: '150px',
+  maxHeight: '220px',
 });
 
 const Avatar = glamorous.img({

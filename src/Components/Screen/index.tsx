@@ -8,5 +8,5 @@ export default Screen;
 const ScreenBorderStyles = glamorous.div({
   border: '5px solid black',
   background: 'white',
-  height: '100%'
+  height: '100%',
 });

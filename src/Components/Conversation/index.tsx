@@ -21,7 +21,7 @@ const ConversationStyles = glamorous.div({
   display: 'flex',
   justifyContent: 'space-between',
   padding: '10px',
-  height: 'auto',
   maxHeight: '100%',
   boxSizing: 'border-box',
+  height: 220,
 });

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous from "glamorous";
 
-const ChatBox = (props: any) => {
+const ChatBox = (props) => {
   return(
     <ChatBoxStyles>
       <Input type="text" placeholder={'Write something'}/>
@@ -12,11 +12,7 @@ export default ChatBox;
 
 
 const ChatBoxStyles = glamorous.div({
-  padding: '10px',
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  bottom: 0,
+  padding: '0 10px 10px 10px',
 });
 
 const Input = glamorous.input({
