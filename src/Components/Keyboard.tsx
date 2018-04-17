@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
-import KeyboardCell from "../KeyboardCell";
-import Recommendations from "../Recommendations";
+import KeyboardCell from "./KeyboardCell";
+import Recommendations from "./ListWordRecommendations";
 
 
 const Keyboard = (props:any) => {

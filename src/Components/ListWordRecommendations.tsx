@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous from "glamorous";
 
-const Recommendations = (props: any) => {
+const ListWordRecommendations = (props: any) => {
   return (
       <RecommendedListStyle>
         {props.recommendations.map((word: string, i: number) => {
@@ -10,7 +10,7 @@ const Recommendations = (props: any) => {
       </RecommendedListStyle>
   );
 };
-export default Recommendations;
+export default ListWordRecommendations;
 
 
 const RecommendedListStyle = glamorous.ul({

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import glamorous from "glamorous";
 
-import Conversation from "../Conversation";
-import ChatBox from "../ChatBox/index";
+import Conversation from "./Conversation";
+import ChatBox from "./ChatBox";
 
 const conversation: Array<object> = [
   {
@@ -21,7 +21,7 @@ const Chat = (props: any) => {
   return (
     <ChatWrapperStyles>
       <Conversation conversation={conversation}/>
-      <ChatBox />
+      <ChatBox onChatBoxChange={(value: string) => props.onChatBoxChange(value)}/>
     </ChatWrapperStyles>
   );
 };

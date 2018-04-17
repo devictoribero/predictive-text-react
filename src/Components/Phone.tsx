@@ -1,8 +1,9 @@
 import * as React from 'react';
-import Keyboard from "../Keyboard";
 import glamorous from "glamorous";
-import Screen from "../Screen";
-import Chat from "../Chat";
+
+import Keyboard from "./Keyboard";
+import Screen from "./Screen";
+import Chat from "./Chat";
 
 interface PhoneState {
   isKeyboardShown: boolean,
@@ -16,12 +17,16 @@ class Phone extends React.Component<{},PhoneState> {
     };
   }
 
+  _handleOnChatBoxChange(value: string) {
+    console.log(value);
+  }
+
   render() {
     return (
       <PhoneStyles>
         <Screen>
 
-          <Chat/>
+          <Chat onChatBoxChange={(value: string) => this._handleOnChatBoxChange(value)}/>
           {this.state.isKeyboardShown && <Keyboard />}
 
         </Screen>
@@ -38,7 +43,7 @@ const PhoneStyles = glamorous.main({
   paddingTop: '40px',
   paddingBottom: '60px',
   boxShadow: '0 0 1em 0.25em rgba(0,0,0,0.2)',
-  width: '275px',
-  height: '500px',
+  width: '300px',
+  height: '450px',
   overflow: 'hidden',
 });

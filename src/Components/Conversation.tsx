@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous from "glamorous";
 
-import UserMessages from "./components/UserMessages";
+import UserMessages from "./UserMessages";
 
 const Conversation = (props:any) => {
   return (
@@ -23,5 +23,5 @@ const ConversationStyles = glamorous.div({
   padding: '10px',
   maxHeight: '100%',
   boxSizing: 'border-box',
-  height: 220,
+  height: 170,
 });

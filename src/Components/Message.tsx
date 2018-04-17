@@ -12,6 +12,7 @@ const MessageStylesStyles = glamorous.p({
   justifyContent: 'space-between',
   padding: '10px',
   background: '#dcf8c6',
+  textAlign: 'left',
   borderRadius: '7px',
   border: '1px solid #c7f4a4',
   fontSize: 15,

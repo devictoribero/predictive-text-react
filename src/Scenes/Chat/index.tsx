@@ -1,12 +1,11 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
-
 import Phone from "../../Components/Phone";
 
 const Chat = (props:any) => {
   return(
     <ChatScene>
-      <Phone />
+      <Phone/>
     </ChatScene>
   );
 };
