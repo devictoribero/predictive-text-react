@@ -19,13 +19,14 @@ const Keyboard = (props:any) => {
 
   return (
     <div>
-      <Recommendations recommendations={['casa', 'cabra', 'casi', 'caso', 'casar']}/>
+      <Recommendations recommendations={props.recommendations}/>
 
       <PhoneKeyboard>
         {KEYBOARD_CONFIGURATION.map((characters: any, i: number) => {
           return (
             <KeyboardCell
               key={i}
+              onCellClick={() => props.onCellClick(i)}
               number_cell={i}
               characters={characters}
             />

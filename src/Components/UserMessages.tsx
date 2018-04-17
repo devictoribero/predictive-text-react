@@ -4,7 +4,6 @@ import Message from "./Message";
 
 
 const UserMessages = (props:any) => {
-  console.log(props);
   return (
     <UserMessageStyles>
 

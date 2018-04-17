@@ -2,12 +2,13 @@ import * as React from 'react';
 import glamorous from "glamorous";
 
 import Keyboard from "./Keyboard";
-import Chat from "./ChatWindow";
+import ChatWindow from "./ChatWindow";
 
 interface PhoneState {
   isKeyboardShown: boolean,
   message: string,
   conversation: object,
+  recommendations: Array<any>,
 }
 
 class PhoneComponent extends React.Component<{}, PhoneState> {
@@ -30,11 +31,16 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
           }
         ],
       },
+      recommendations: ['casa', 'cabra', 'casi', 'caso', 'casar'],
     };
   }
 
   _handleOnChatBoxChange(value: string) {
-    console.log(value);
+    this.setState({ message: value });
+  }
+
+  _handleOnCellClick(cellNumber: number) {
+    console.log(cellNumber);
   }
 
   render() {
@@ -42,19 +48,24 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
       <Phone>
         <PhoneInner>
 
-          <Chat
+          <ChatWindow
             message={this.state.message}
             conversation={this.state.conversation}
             onChatBoxChange={(value: string) => this._handleOnChatBoxChange(value)}
           />
-          {this.state.isKeyboardShown && <Keyboard/>}
+
+          {this.state.isKeyboardShown && (
+            <Keyboard
+              onCellClick={(cellNumber: number) => this._handleOnCellClick(cellNumber)}
+              recommendations={this.state.recommendations}
+            />
+          )}
 
         </PhoneInner>
       </Phone>
     );
   }
 }
-
 export default PhoneComponent;
 
 
