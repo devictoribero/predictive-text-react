@@ -7,8 +7,8 @@ const ChatScene = glamorous.section({
   'background' : 'linear-gradient(108deg, #26D0CE, #1A2980 90%)',
   'height': '100vh',
   'display': 'flex',
-  'align-items': 'center',
-  'justify-content': 'center',
+  'alignItems': 'center',
+  'justifyContent': 'center',
 });
 
 const Chat = (props:any) => {

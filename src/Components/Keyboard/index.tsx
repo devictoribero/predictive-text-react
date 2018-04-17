@@ -5,9 +5,9 @@ import KeyboardCell from "../KeyboardCell";
 const PhoneKeyboard = glamorous.div({
   'width': '100%',
   'display': 'flex',
-  'justify-content': 'center',
-  'align-items': 'center',
-  'flex-wrap': 'wrap',
+  'justifyContent': 'center',
+  'alignItems': 'center',
+  'flexWrap': 'wrap',
   'borderTop': '1px solid #efefef',
 });
 
