@@ -40,7 +40,7 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
   }
 
   _handleOnCellClick(cellNumber: number) {
-    console.log(cellNumber);
+
   }
 
   render() {
