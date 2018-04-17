@@ -7,7 +7,7 @@ const MessageStylesStyles = glamorous.p({
   padding: '10px',
   background: '#dcf8c6',
   borderRadius: '7px',
-  boxShadow : '0 1px 0.5px rgba(0, 0, 0, 0.13)',
+  border: '1px solid #c7f4a4',
   margin: '10px 0 0 0',
   '&:first-child': {
     marginTop: '0px',

@@ -23,8 +23,9 @@ const ChatWrapperStyles = glamorous.div({
   backgroundSize: 'contain',
   backgroundAttachment: 'fixed',
   backgroundRepeat: 'no-repeat',
-  minHeight: '250px',
+  minHeight: '300px',
   position: 'relative',
+  height: '100%',
 });
 
 const Chat = (props: any) => {

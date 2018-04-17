@@ -4,27 +4,39 @@ import glamorous from "glamorous";
 import Screen from "../Screen";
 import Chat from "../Chat";
 
+interface PhoneState {
+  isKeyboardShown: boolean,
+}
 
 const PhoneStyles = glamorous.main({
-  'borderRadius': '6px',
-  'background': 'black',
-  'paddingTop': '40px',
-  'paddingBottom': '60px',
-  'boxShadow': '0 0 1em 0.25em rgba(0,0,0,0.2)',
-  'width': '275px',
+  borderRadius: '6px',
+  background: 'black',
+  paddingTop: '40px',
+  paddingBottom: '60px',
+  boxShadow: '0 0 1em 0.25em rgba(0,0,0,0.2)',
+  width: '275px',
+  height: '500px'
 });
 
-const Phone = (props:any) => {
-  return (
-    <PhoneStyles>
-      <Screen>
+class Phone extends React.Component<{},PhoneState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isKeyboardShown: false
+    };
+  }
 
-        <Chat/>
+  render() {
+    return (
+      <PhoneStyles>
+        <Screen>
 
-        <Keyboard />
+          <Chat/>
+          {this.state.isKeyboardShown && <Keyboard />}
 
-      </Screen>
-    </PhoneStyles>
-  );
-};
+        </Screen>
+      </PhoneStyles>
+    );
+  }
+}
 export default Phone;

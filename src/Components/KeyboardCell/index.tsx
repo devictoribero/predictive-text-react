@@ -8,7 +8,7 @@ const KeyboardCellStyles = glamorous.div({
   'justifyContent': 'center',
   'padding': '9px',
   'width': '33%',
-  'height': '60px',
+  'height': '45px',
   'boxSizing': 'border-box',
   'fontFamily': '"Raleway", sans-serif',
 });

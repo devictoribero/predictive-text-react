@@ -1,9 +1,13 @@
 import * as React from 'react';
 import glamorous from "glamorous";
 
-const ChatBoxStyles = glamorous.div({
+const ChatBoxStyles = glamorous.div(props => ({
   padding: '10px',
-});
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: 0,
+}));
 
 const Input = glamorous.input({
   width: '100%',

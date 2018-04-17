@@ -2,8 +2,9 @@ import * as React from 'react';
 import glamorous from "glamorous";
 
 const ScreenBorderStyles = glamorous.div({
-  'border': '5px solid black',
-  'background': 'white',
+  border: '5px solid black',
+  background: 'white',
+  height: '100%'
 });
 
 const Screen = (props:any) => {
