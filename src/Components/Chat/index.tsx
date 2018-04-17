@@ -3,7 +3,6 @@ import glamorous from "glamorous";
 
 import Conversation from "../Conversation";
 import ChatBox from "../ChatBox/index";
-import Recommendations from "../Recommendations";
 
 const conversation: Array<object> = [
   {
@@ -12,10 +11,25 @@ const conversation: Array<object> = [
       avatar: 'https://avatars0.githubusercontent.com/u/16169890?s=400&v=4',
       messages: [
         'This is the exercise presented to Kiwi.com',
+        'To start, start typing on the chatbox',
+        'Don\'t forget to check my website www.victorribero.com',
+        'My linkedin profile is interesting too',
+
       ],
     },
   }
 ];
+
+const Chat = (props: any) => {
+  return (
+    <ChatWrapperStyles>
+      <Conversation conversation={conversation}/>
+      <ChatBox />
+    </ChatWrapperStyles>
+  );
+};
+export default Chat;
+
 
 const bg_url = 'https://i.pinimg.com/originals/8f/ba/cb/8fbacbd464e996966eb9d4a6b7a9c21e.jpg';
 const ChatWrapperStyles = glamorous.div({
@@ -25,16 +39,6 @@ const ChatWrapperStyles = glamorous.div({
   backgroundRepeat: 'no-repeat',
   minHeight: '300px',
   position: 'relative',
-  height: '100%',
+  height: 'auto',
+  maxHeight: '100%',
 });
-
-const Chat = (props: any) => {
-  return (
-    <ChatWrapperStyles>
-      <Conversation conversation={conversation}/>
-      <ChatBox />
-      <Recommendations recommendations={['as', 'fgdfg', 'dfgdfg']}/>
-    </ChatWrapperStyles>
-  );
-};
-export default Chat;

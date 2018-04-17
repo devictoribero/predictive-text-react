@@ -2,23 +2,6 @@ import * as React from 'react';
 import glamorous from "glamorous";
 import Message from "./Message";
 
-const UserMessageStyles = glamorous.div({
-  display: 'flex',
-  justifyContent: 'space-between',
-  maxHeight: '150px',
-  overflowY: 'auto',
-});
-
-const Avatar = glamorous.img({
-  width: '40px',
-  height: '40px',
-  borderRadius: '500px',
-  border: '1px solid #efefef',
-});
-
-const BlockMessagesStyles = glamorous.div({
-  marginLeft: '10px',
-});
 
 const UserMessages = (props:any) => {
   return (
@@ -39,3 +22,23 @@ const UserMessages = (props:any) => {
   );
 };
 export default UserMessages;
+
+
+const UserMessageStyles = glamorous.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+  overflowY: 'auto',
+  height: '100%',
+  boxSizing: 'border-box',
+});
+
+const Avatar = glamorous.img({
+  width: '40px',
+  height: '40px',
+  borderRadius: '500px',
+  border: '1px solid #efefef',
+});
+
+const BlockMessagesStyles = glamorous.div({
+  marginLeft: '10px',
+});

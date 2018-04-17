@@ -8,21 +8,11 @@ interface PhoneState {
   isKeyboardShown: boolean,
 }
 
-const PhoneStyles = glamorous.main({
-  borderRadius: '6px',
-  background: 'black',
-  paddingTop: '40px',
-  paddingBottom: '60px',
-  boxShadow: '0 0 1em 0.25em rgba(0,0,0,0.2)',
-  width: '275px',
-  height: '500px'
-});
-
 class Phone extends React.Component<{},PhoneState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      isKeyboardShown: false
+      isKeyboardShown: true
     };
   }
 
@@ -40,3 +30,15 @@ class Phone extends React.Component<{},PhoneState> {
   }
 }
 export default Phone;
+
+
+const PhoneStyles = glamorous.main({
+  borderRadius: '6px',
+  background: 'black',
+  paddingTop: '40px',
+  paddingBottom: '60px',
+  boxShadow: '0 0 1em 0.25em rgba(0,0,0,0.2)',
+  width: '275px',
+  height: '500px',
+  overflow: 'hidden',
+});

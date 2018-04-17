@@ -1,6 +1,19 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 
+const KeyboardCell = (props: any) => {
+  return(
+    <KeyboardCellStyles>
+      <KeyboardNumberStyles>{props.number_cell}</KeyboardNumberStyles>
+      <KeyboardCharactersStyles>
+        {props.characters.map((char: string) => char)}
+      </KeyboardCharactersStyles>
+    </KeyboardCellStyles>
+  );
+};
+export default KeyboardCell;
+
+
 const KeyboardCellStyles = glamorous.div({
   'position': 'relative',
   'display': 'flex',
@@ -23,15 +36,3 @@ const KeyboardNumberStyles = glamorous.span({
   'right': '15px',
   'fontSize': '12px',
 });
-
-const KeyboardCell = (props: any) => {
-  return(
-    <KeyboardCellStyles>
-      <KeyboardNumberStyles>{props.number_cell}</KeyboardNumberStyles>
-      <KeyboardCharactersStyles>
-        {props.characters.map((char: string) => char)}
-      </KeyboardCharactersStyles>
-    </KeyboardCellStyles>
-  );
-};
-export default KeyboardCell;

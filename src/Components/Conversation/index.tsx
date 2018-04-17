@@ -3,12 +3,6 @@ import glamorous from "glamorous";
 
 import UserMessages from "./components/UserMessages";
 
-const ConversationStyles = glamorous.div({
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '10px',
-});
-
 const Conversation = (props:any) => {
   return (
     <ConversationStyles>
@@ -21,3 +15,13 @@ const Conversation = (props:any) => {
   );
 };
 export default Conversation;
+
+
+const ConversationStyles = glamorous.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+  padding: '10px',
+  height: 'auto',
+  maxHeight: '100%',
+  boxSizing: 'border-box',
+});
