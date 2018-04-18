@@ -9,7 +9,7 @@ const ChatBox = (props: any) => {
         placeholder={'Write something'}
         value={props.message}
         onChange={(event: any) => props.onChatBoxChange(event.target.value)}
-      >{props.chatBoxValue}</FakeInput>
+      >{props.message}</FakeInput>
     </ChatBoxStyles>
   );
 };
@@ -31,6 +31,8 @@ const FakeInput = glamorous.span({
   display: 'block',
   background: 'white',
   minHeight: 40,
+  textAlign: 'left',
+  fontSize: 14,
   '&:focus': {
     boxShadow: 'inset 0 0 5px #ced4e0',
     outline: 'none',
