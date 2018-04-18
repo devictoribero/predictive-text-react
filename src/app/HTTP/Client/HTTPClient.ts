@@ -1,4 +1,4 @@
-import {HTTPClientInterface} from "./HTTPClientInterface";
+import HTTPClientInterface from "./HTTPClientInterface";
 
 export default class HTTPClient implements HTTPClientInterface {
 
