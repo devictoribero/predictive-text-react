@@ -52,7 +52,7 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
       .handle(fakeRequest)
       .then((result: any) =>
       {
-        console.log(result);
+        this.setState({recommendations: result.data});
       }
     );
   }
