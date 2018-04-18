@@ -1,9 +1,11 @@
 import HTTPClientInterface from "./HTTPClientInterface";
+import FakeEndpointInterface from "../../../Infrastructure/FakeAPI/Common/FakeEndpointInterface";
 
 export default class HTTPClient implements HTTPClientInterface {
 
-  get(url: string, data: object): any {
+  handle(fakeEndpoint: FakeEndpointInterface, data: object): any {
     return undefined;
   }
+
 
 }

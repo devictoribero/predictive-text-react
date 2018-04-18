@@ -1,5 +1,7 @@
+import FakeEndpointInterface from "../../../Infrastructure/FakeAPI/Common/FakeEndpointInterface";
+
 export default interface HTTPClientInterface {
 
-  get(url: string, data: object): any
+  handle(fakeEndpoint: FakeEndpointInterface, data: object): any
 
 }
