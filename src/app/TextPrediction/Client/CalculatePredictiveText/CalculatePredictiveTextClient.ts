@@ -1,15 +1,20 @@
 import PredictiveTextClientInterface from "./CalculatePredictiveTextClientInterface";
 import HTTPClientInterface from "../../../HTTP/Client/HTTPClientInterface";
+import FakeEndpointInterface from "../../../../Infrastructure/FakeAPI/Common/FakeEndpointInterface";
 
 export default class CalculatePredictiveTextClient implements PredictiveTextClientInterface {
-  protected BASEPATH = '/root';
   private clientHTTP: HTTPClientInterface;
+  private fakeEndpoint: FakeEndpointInterface;
 
-  constructor(clientHTTP: HTTPClientInterface) {
+  constructor(
+    clientHTTP: HTTPClientInterface,
+    fakeEndpoint: FakeEndpointInterface
+  ) {
     this.clientHTTP = clientHTTP;
+    this.fakeEndpoint = fakeEndpoint;
   }
 
   handle(data: object): any {
-    return this.clientHTTP.get('get', data);
+    return this.clientHTTP.handle(this.fakeEndpoint, data);
   }
 }
