@@ -5,6 +5,10 @@ import ConversationExample from '../ConversationExample';
 import Keyboard from "./Keyboard";
 import ChatWindow from "./ChatWindow";
 import CalculatePredictiveTextService from "../app/TextPrediction/Services/CalculatePredictiveText/CalculatePredictiveTextService";
+import CalculatePredictiveTextAdapter from "../app/TextPrediction/Adapter/CalculatePredictiveText/CalculatePredictiveTextAdapter";
+import CalculatePredictiveTextClient from "../app/TextPrediction/Client/CalculatePredictiveText/CalculatePredictiveTextClient";
+import HTTPClient from "../app/HTTP/Client/HTTPClient";
+import CalculatePredictiveTextFakeEndpoint from "../Infrastructure/FakeAPI/PredictiveText/CalculatePredictiveTextFakeEndpoint";
 
 interface PhoneState {
   isKeyboardShown: boolean,
@@ -15,7 +19,18 @@ interface PhoneState {
 }
 
 class PhoneComponent extends React.Component<{}, PhoneState> {
-  constructor(props: any, calculatePredictiveText: CalculatePredictiveTextService) {
+  constructor(props: any,) {
+    const calculatePredictiveText = (
+      new CalculatePredictiveTextService(
+        new CalculatePredictiveTextAdapter(
+          new CalculatePredictiveTextClient(
+            new HTTPClient(),
+            new CalculatePredictiveTextFakeEndpoint(),
+          )
+        )
+      )
+    );
+
     super(props);
     this.state = {
       calculatePredictiveText: calculatePredictiveText,
@@ -31,7 +46,15 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
   }
 
   _handleOnCellClick(cellNumber: number) {
+    const fakeRequest = [1,2,3,4];
 
+    this.state.calculatePredictiveText
+      .handle(fakeRequest)
+      .then((result: any) =>
+      {
+        console.log(result);
+      }
+    );
   }
 
   render() {

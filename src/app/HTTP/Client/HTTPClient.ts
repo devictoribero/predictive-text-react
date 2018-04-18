@@ -4,8 +4,7 @@ import FakeEndpointInterface from "../../../Infrastructure/FakeAPI/Common/FakeEn
 export default class HTTPClient implements HTTPClientInterface {
 
   handle(fakeEndpoint: FakeEndpointInterface, data: object): any {
-    return undefined;
+    return fakeEndpoint.handle(data)
   }
-
 
 }
