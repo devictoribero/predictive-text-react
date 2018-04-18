@@ -1,9 +1,8 @@
 import RootAPI from "../FakeAPI/Root/RootAPI";
 
-export default class FakeEndpointTextPrediction extends RootAPI {
-  BASEPATH = '/textprediction';
+export default class CalculatePredictiveTextFakeEndpoint extends RootAPI {
 
-  get(url: string, request: object): Array<string> {
+  get(url: string, data: object): Array<string> {
     return ['text1', 'text2'];
   }
 
