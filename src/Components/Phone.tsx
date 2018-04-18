@@ -1,37 +1,28 @@
 import * as React from 'react';
 import glamorous from "glamorous";
 
+import ConversationExample from '../ConversationExample';
 import Keyboard from "./Keyboard";
 import ChatWindow from "./ChatWindow";
+import CalculatePredictiveTextService from "../app/TextPrediction/Services/CalculatePredictiveText/CalculatePredictiveTextService";
 
 interface PhoneState {
   isKeyboardShown: boolean,
   message: string,
   conversation: object,
   recommendations: Array<any>,
+  calculatePredictiveText: CalculatePredictiveTextService
 }
 
 class PhoneComponent extends React.Component<{}, PhoneState> {
-  constructor(props: any) {
+  constructor(props: any, calculatePredictiveText: CalculatePredictiveTextService) {
     super(props);
     this.state = {
+      calculatePredictiveText: calculatePredictiveText,
       isKeyboardShown: true,
       message: '',
-      conversation: {
-        messages: [
-          {
-            user: {
-              name: 'Victor Ribero',
-              avatar: 'https://avatars0.githubusercontent.com/u/16169890?s=400&v=4',
-            },
-            data: [
-              'To start, start typing on the chatbox',
-              'Don\'t forget to check my website www.victorribero.com',
-            ],
-          }
-        ],
-      },
-      recommendations: ['casa', 'cabra', 'casi', 'caso', 'casar'],
+      conversation: ConversationExample,
+      recommendations: [],
     };
   }
 
