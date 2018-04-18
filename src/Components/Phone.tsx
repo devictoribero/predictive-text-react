@@ -46,13 +46,17 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
   }
 
   _handleOnCellClick(cellNumber: number) {
-    const fakeRequest = [1,2,3,4];
+    let {message: current_message} = this.state;
+    const fakeRequest = [cellNumber];
+    current_message = this.state.message + cellNumber;
+    console.log(current_message);
 
-    this.state.calculatePredictiveText
-      .handle(fakeRequest)
-      .then((result: any) =>
+    this.state.calculatePredictiveText.handle(fakeRequest).then((result: any) =>
       {
-        this.setState({recommendations: result.data});
+        this.setState({
+          message: current_message,
+          recommendations: result.data,
+        });
       }
     );
   }
