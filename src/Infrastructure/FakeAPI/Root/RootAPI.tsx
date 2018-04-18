@@ -1,11 +1,7 @@
 import RootAPIInterface from "./RootAPIInterface";
 
 export default abstract class RootAPI implements RootAPIInterface {
-  protected BASEPATH = '/root';
-
-  constructor(BASEPATH: string) {
-    this.BASEPATH = BASEPATH;
-  }
+  public BASEPATH = '/root';
 
   abstract get(url: string, request: object): string;
 
