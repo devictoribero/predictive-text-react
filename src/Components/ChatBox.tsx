@@ -4,12 +4,7 @@ import glamorous from "glamorous";
 const ChatBox = (props: any) => {
   return(
     <ChatBoxStyles>
-      <FakeInput
-        type="text"
-        placeholder={'Write something'}
-        value={props.message}
-        onChange={(event: any) => props.onChatBoxChange(event.target.value)}
-      >{props.message}</FakeInput>
+      <FakeInput>{props.message}</FakeInput>
     </ChatBoxStyles>
   );
 };

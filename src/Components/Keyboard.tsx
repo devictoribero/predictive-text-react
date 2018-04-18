@@ -33,9 +33,21 @@ const Keyboard = (props:any) => {
           );
         })}
 
-        <KeyboardCell number_cell={''} characters={['*']} />
-        <KeyboardCell number_cell={'#'} characters={[0]} />
-        <KeyboardCell number_cell={''} characters={['$']} />
+        <KeyboardCell
+          number_cell={''}
+          characters={['*']}
+          onCellClick={() => props.onCellClick(-1)}
+        />
+        <KeyboardCell
+          number_cell={'#'}
+          characters={[0]}
+          onCellClick={() => props.onCellClick(-1)}
+        />
+        <KeyboardCell
+          number_cell={''}
+          characters={['$']}
+          onCellClick={() => props.onCellClick(-1)}
+        />
       </PhoneKeyboard>
     </div>
   );

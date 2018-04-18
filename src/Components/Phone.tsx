@@ -41,15 +41,12 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
     };
   }
 
-  _handleOnChatBoxChange(value: string) {
-    this.setState({ message: value });
-  }
-
   _handleOnCellClick(cellNumber: number) {
+    if (cellNumber === -1 || cellNumber === 0) { return; }
+
     let {message: current_message} = this.state;
     const fakeRequest = [cellNumber];
     current_message = this.state.message + cellNumber;
-    console.log(current_message);
 
     this.state.calculatePredictiveText.handle(fakeRequest).then((result: any) =>
       {
@@ -58,7 +55,10 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
           recommendations: result.data,
         });
       }
-    );
+    ).catch((err: Error) => {
+      console.log(err);
+      alert('Something went wrong');
+    });
   }
 
   render() {
@@ -69,7 +69,6 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
           <ChatWindow
             message={this.state.message}
             conversation={this.state.conversation}
-            onChatBoxChange={(value: string) => this._handleOnChatBoxChange(value)}
           />
 
           {this.state.isKeyboardShown && (

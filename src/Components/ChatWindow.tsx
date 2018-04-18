@@ -10,7 +10,6 @@ const ChatWindow = (props: any) => {
       <Conversation conversation={props.conversation}/>
       <ChatBox
         message={props.message ? props.message : 'Press some numbers...'}
-        onChatBoxChange={(value: string) => props.onChatBoxChange(value)}
       />
     </ChatWrapperStyles>
   );
