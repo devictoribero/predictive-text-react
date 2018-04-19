@@ -1,5 +1,5 @@
 export default interface CalculatePredictiveTextAdapterInterface {
 
-  handle(request: object): any
+  handle(request: string): any
   
 }

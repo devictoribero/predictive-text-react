@@ -2,6 +2,6 @@ import FakeEndpointInterface from "../../../Infrastructure/FakeAPI/Common/FakeEn
 
 export default interface HTTPClientInterface {
 
-  handle(fakeEndpoint: FakeEndpointInterface, data: object): any
+  handle(fakeEndpoint: FakeEndpointInterface, data: string): any
 
 }

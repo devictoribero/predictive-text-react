@@ -1,5 +1,5 @@
 export default interface FakeEndpointInterface {
 
-  handle(data: object): any;
+  handle(data: string): any;
 
 }

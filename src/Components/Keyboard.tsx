@@ -25,9 +25,9 @@ const Keyboard = (props:any) => {
         {KEYBOARD_CONFIGURATION.map((characters: any, i: number) => {
           return (
             <KeyboardCell
-              key={i}
-              onCellClick={() => props.onCellClick(i)}
-              number_cell={i}
+              key={i+1}
+              onCellClick={() => props.onCellClick(i+1)}
+              number_cell={i+1}
               characters={characters}
             />
           );

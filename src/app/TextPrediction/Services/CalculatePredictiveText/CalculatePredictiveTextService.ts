@@ -8,7 +8,7 @@ export default class CalculatePredictiveTextService implements CalculatePredicti
     this.adapter = adapter;
   }
 
-  handle(request: object): any {
+  handle(request: string): any {
     return this.adapter.handle(request);
   }
 }

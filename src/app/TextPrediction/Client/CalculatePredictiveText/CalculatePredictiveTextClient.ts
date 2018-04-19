@@ -14,7 +14,7 @@ export default class CalculatePredictiveTextClient implements PredictiveTextClie
     this.fakeEndpoint = fakeEndpoint;
   }
 
-  handle(data: object): Promise<any> {
+  handle(data: string): Promise<any> {
     const fakeAPIResponse = this.clientHTTP.handle(this.fakeEndpoint, data);
 
     return new Promise((resolve, reject) => {

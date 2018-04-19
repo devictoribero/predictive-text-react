@@ -45,10 +45,9 @@ class PhoneComponent extends React.Component<{}, PhoneState> {
     if (cellNumber === -1 || cellNumber === 0) { return; }
 
     let {message: current_message} = this.state;
-    const fakeRequest = [cellNumber];
     current_message = this.state.message + cellNumber;
 
-    this.state.calculatePredictiveText.handle(fakeRequest).then((result: any) =>
+    this.state.calculatePredictiveText.handle(current_message).then((result: any) =>
       {
         this.setState({
           message: current_message,
